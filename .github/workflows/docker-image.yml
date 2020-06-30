@@ -17,5 +17,9 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
     - name: run
-      run: docker run -d --name docker -v `pwd`/files:/files twitter-stream /files/run.sh
+      run: docker run -d --name docker -v `pwd`/files:/files docker /files/run.sh
+    - name: run
+      run: docker run -d --name docker -v `pwd`/files:/files Dockerfile /files/run.sh
+    - name: run
+      run: docker run -d --name Dockerfile -v `pwd`/files:/files Dockerfile /files/run.sh
       
