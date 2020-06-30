@@ -18,6 +18,4 @@ jobs:
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
     - name: run
       run: docker run -d --name docker -v `pwd`/files:/files docker /files/run.sh
-    - name: docker push1
-      run: docker push -d --name docker -v `pwd`/files:/files docker /files/run.sh
-    
+ 
