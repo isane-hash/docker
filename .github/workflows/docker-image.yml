@@ -17,7 +17,7 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
     - name: build
-      run: docker build -t docker
+      run: docker build -t isane-hash/docker
     - name: run
       run: docker run -d --name twitter-stream -v `pwd`/files:/files twitter-stream /files/run.sh
       
